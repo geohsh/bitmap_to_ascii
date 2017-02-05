@@ -1,4 +1,4 @@
-\n# bitmap_to_ascii
+# bitmap_to_ascii
 
 This is a small C program that converts bitmap (BMP) files to asii arts (eg. txt file)
 
