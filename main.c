@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-void bit_map_convert(char* in_pic, char* out_txt)
+void bit_map_convert(char* in_pic, char* out_txt, int clr)
 {
     FILE * pic = fopen(in_pic, "rb");
     const char gs[18] = "$@8&MV+<|\"=~;`. ";
@@ -34,8 +34,8 @@ void bit_map_convert(char* in_pic, char* out_txt)
     }
 
     FILE * output_txt = fopen(out_txt, "w");
-    for(int i = height / 4 - 1; i >= 0 ; i--){
-        for (int j = 0 ; j < width / 2 ; j++){
+    for(int i = height / 4 - 1; i >= 0 ; i-=clr){
+        for (int j = 0 ; j < width / 2 ; j+=clr){
             fputc ( gs[(to_grey[i][j] / 17)], output_txt);
         }
         fputc('\n', output_txt);
@@ -50,11 +50,15 @@ int main(void){
     char input_pic[20] = {'\0'};
     char out_put[20] = {'\0'};
     printf("Please in put the file name you want to convert in the following format\n");
-    printf("file_name_of_picture file_name_of_output");
+    printf("file_name_of_picture file_name_of_output\n");
     scanf("%s %s", &input_pic, &out_put);
+    printf("from scale 1 ~ 4, how clear do you want to output be?\n");
+    printf("1 will result in a huge picture ouput (provide your original pic is clear enough...)\n");
+    int resl = 0;
+    scanf("%d",&resl);
     printf("working...\n");
 
-    bit_map_convert(input_pic, out_put);
+    bit_map_convert(input_pic, out_put, resl);
     printf("done\n");
 
     printf("Press any key to continue...\n");
