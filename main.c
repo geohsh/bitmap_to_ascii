@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//***********************************
+//********************************************************
 // this program only works on 24-bits
 // MS bitmap (.bmp) file
 // output is pure txt, no colour is
 // generated lol
-//***********************************
+//********************************************************
 
 
 // bitmap_convert converts the bitmap picture in_pic to ASCII arts
