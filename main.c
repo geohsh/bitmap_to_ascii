@@ -2,10 +2,9 @@
 #include <stdlib.h>
 
 //********************************************************
-// this program only works on 24-bits
-// MS bitmap (.bmp) file
-// output is pure txt, no colour is
-// generated lol
+// this program only works on 24-bits MS bitmap (.bmp) file
+//
+// output is pure txt, no colour is generated lol
 //********************************************************
 
 
