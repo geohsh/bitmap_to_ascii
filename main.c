@@ -15,6 +15,7 @@
 // Note: clr >= 1
 void bitmap_convert(char* in_pic, char* out_txt, int clr);
 
+// I don;t like it
 int main(void){
     char input_pic[20] = {'\0'};
     char out_put[20] = {'\0'};
